@@ -1,3 +1,7 @@
+package HomeBL;
+
+import core.Message;
+
 public class StringMessage implements Message {
     String basicInformation;
 

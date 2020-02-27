@@ -1,3 +1,8 @@
+import HomeBL.Light;
+import HomeBL.Motion;
+import HomeBL.StringMessage;
+import core.Device;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,10 +27,14 @@ public class Main {
 
         Motion sensor1 = new Motion();
         sensor1.location = "place1";
+        sensor1.message = new StringMessage("001");
+
         Motion sensor2 = new Motion();
         sensor2.location = "place2";
+        sensor2.message = new StringMessage("002");
         Motion sensor3 = new Motion();
         sensor3.location = "place3";
+        sensor3.message = new StringMessage("003");
 
         Person p1 = new Person();
         p1.location = "place1";
@@ -37,12 +46,34 @@ public class Main {
         sensor3.addDevice(device5);
         sensor3.addDevice(device6);
 
-        sensor1.notifyDevice(p1.location);
-        sensor2.notifyDevice(p1.location);
-        sensor3.notifyDevice(p1.location);
-        sensor1.notifyDevice("place2");
-        sensor2.notifyDevice("place2");
-        sensor3.notifyDevice("place2");
+
+        sensor1.notifyDevice();
+        System.out.println(device2.status);
+        System.out.println(device1.status);
+        System.out.println(device3.status);
+        System.out.println(device4.status);
+        System.out.println(device5.status);
+        System.out.println(device6.status);
+
+        System.out.println("------------");
+
+        /*sensor2.notifyDevice();
+        sensor1.status = "off";
+        System.out.println(device1.status);
+        System.out.println(device2.status);
+        System.out.println(device3.status);
+        System.out.println(device4.status);
+        System.out.println(device5.status);
+        System.out.println(device6.status);*/
+
+
+
+        /*sensor1.notifyDevice();
+        sensor2.notifyDevice();
+        sensor3.notifyDevice();*/
+        /*sensor1.notifyDevice();
+        sensor2.notifyDevice();
+        sensor3.notifyDevice();*/
     }
 
 
